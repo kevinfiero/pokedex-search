@@ -1,0 +1,39 @@
+section{
+    width: 300px;
+    height: 400px;
+    margin: 10px;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+img{
+    height: 100px;
+    width: 100px;
+}
+
+.center{
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+  }
+
+  ul, li{
+    align-items: left;
+    align-content: left;
+    justify-content: left;
+    justify-items: left;
+    text-align: left;
+  }
+
+  .border{
+      border: 1px solid black;
+  }

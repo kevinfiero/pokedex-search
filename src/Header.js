@@ -4,7 +4,7 @@ export default class Header extends Component {
     render() {
         return (
 
-            <header>
+            <header className = 'center'>
                 <h1>Pokémon</h1>
             </header>  
 
