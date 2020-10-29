@@ -9,7 +9,7 @@ export default class App extends Component {
   state = {
     filter: '',
     textString: '',
-    sort1: true
+    sort1: 'ascending'
   }
 
   buttonClick = () => {
@@ -27,13 +27,18 @@ export default class App extends Component {
         sort1: e.target.value
     })}
 
+    sort2Change = (e) => {
+      this.setState({
+          sort1: e.target.value
+      })}
+
   render() {
     return (
       <>
         <Header />
         <div className = 'row'>
-          <Searchbar sort1 = {this.sort1Change} buttonClick = {this.buttonClick} textChange = {this.textChange} />
-          <PokeList pokemonData = {pokemonData} filter = {this.state.filter} />
+          <Searchbar sort1Change = {this.sort1Change} buttonClick = {this.buttonClick} textChange = {this.textChange} />
+          <PokeList sort1 = {this.state.sort1} pokemonData = {pokemonData} filter = {this.state.filter} />
         </div>
       </>
     )

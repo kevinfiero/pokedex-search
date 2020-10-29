@@ -7,7 +7,7 @@ export default class SearchBar extends Component {
                 Search by Name:
                <input type='text' onChange = {this.props.textChange}/>
                <button onClick = {this.props.buttonClick}>Go!</button>
-               <select>
+               <select onChange = {this.props.sort1Change}>
                    <option value ='ascending'>Ascending</option>
                    <option value ='descending'>Descending</option>
                </select>
