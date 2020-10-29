@@ -11,6 +11,12 @@ export default class SearchBar extends Component {
                    <option value ='ascending'>Ascending</option>
                    <option value ='descending'>Descending</option>
                </select>
+               <select onChange = {this.props.sort2Change}>
+                    <option value ='pokemon'>Pokemon</option>
+                    <option value ='type_1'>Primary Type</option>
+                    <option value ='attack'>Attack</option>
+                    <option value ='defense'>Defense</option>
+               </select>
             </div>
         )
     }
