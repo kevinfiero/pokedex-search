@@ -4,8 +4,6 @@ import PokeItem from './PokeItem.js';
 export default class PokeList extends Component {
     
     render() {
-        console.log(this.props.sort1)
-        console.log(this.props.sort2)
         const filteredPokemonData = this.props.pokemonData.filter((pokemon) => {
             if(this.props.filter === '') return true;
             if (this.props.filter.toUpperCase() === pokemon.pokemon.toUpperCase()) return true;
