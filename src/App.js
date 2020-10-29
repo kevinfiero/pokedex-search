@@ -9,6 +9,7 @@ import {
 import Header from './Header.js';
 import ListPage from './ListPage.js';
 import Home from './Home.js';
+import Fetch from './Fetch.js';
 
 export default class App extends Component {
     render() {
@@ -26,6 +27,11 @@ export default class App extends Component {
                         path="/" 
                         exact
                         render={(routerProps) => <Home {...routerProps} />} 
+                    />
+                    <Route 
+                        path="/fetch" 
+                        exact
+                        render={(routerProps) => <Fetch {...routerProps} />} 
                     />
                     </Switch>
                 </Router>
