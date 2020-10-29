@@ -3,8 +3,7 @@ import './App.css';
 import {
     BrowserRouter as Router, 
     Route, 
-    Switch,
-    Link,
+    Switch
 } from 'react-router-dom';
 import Header from './Header.js';
 import ListPage from './ListPage.js';

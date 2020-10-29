@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 
 export default class PokeItem extends Component {
+
     render() {
+        const hide = (type) => {
+            if(type === 'NA'){return 'hidden'}
+        }
         return (
             <section className = 'column center border capital' style={{backgroundColor: this.props.pokemon.color_1}}>
                 <h2>{this.props.pokemon.pokemon}</h2>
@@ -27,5 +31,3 @@ export default class PokeItem extends Component {
         )
     }
 }
-
-function hide(type) {if(type === 'NA'){return 'hidden'}}

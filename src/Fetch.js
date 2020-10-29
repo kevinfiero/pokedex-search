@@ -34,7 +34,7 @@ export default class Fetch extends Component {
                             {quote.character}
                         </p>
                     </div>
-                )}
+                    )}
            </div>
             </> 
             
