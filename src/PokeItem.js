@@ -5,7 +5,7 @@ export default class PokeItem extends Component {
         return (
             <section className = 'column center border capital' style={{backgroundColor: this.props.pokemon.color_1}}>
                 <h2>{this.props.pokemon.pokemon}</h2>
-                <img src = {this.props.pokemon.url_image} />
+                <img src = {this.props.pokemon.url_image} alt = {this.props.pokemon.pokemon} />
                 <div className = 'row'>
                     <ul> Stats:
                         <li>HP: {this.props.pokemon.hp}</li>
