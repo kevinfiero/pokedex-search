@@ -7,8 +7,9 @@ export default class Fetch extends Component {
     }
 
     componentDidMount = async () => {
-        const response = await fetch.get('http://futuramaapi.herokuapp.com/api/quotes');
-        this.setState({ quotes: response.body });
+        const response = await fetch.get('https://alchemy-pokedex.herokuapp.com/api/pokedex');
+        console.log(response.body);
+        this.setState({ quotes: response.body.results });
     }
 
     render() {
