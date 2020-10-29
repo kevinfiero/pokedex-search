@@ -5,22 +5,29 @@ export default class PokeList extends Component {
     
     render() {
         console.log(this.props.sort1)
+        console.log(this.props.sort2)
         const filteredPokemonData = this.props.pokemonData.filter((pokemon) => {
             if(this.props.filter === '') return true;
             if (this.props.filter.toUpperCase() === pokemon.pokemon.toUpperCase()) return true;
             return false
             });
-
+        const property = this.props.sort2;
             if(this.props.sort1 === 'ascending'){
-                console.log('ascend');
                 filteredPokemonData.sort(function(a, b) {
-
-                    return a.id - b.id;
+                    if(property === 'pokemon' || property === 'type_1'){
+                        
+                        return a[property].localeCompare(b[property])
+                    } else{
+                        return a[property] - b[property];
+                    }
                 })
             } else{
-                console.log('descend');
                 filteredPokemonData.sort(function(a, b) {
-                    return b.id - a.id;
+                    if(property === 'pokemon' || property === 'type_1'){
+                        return b[property].localeCompare(a[property])
+                    } else{
+                        return b[property] - a[property];
+                    }
                 })
             }
         return (
