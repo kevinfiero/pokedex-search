@@ -30,8 +30,8 @@ export default class PokeList extends Component {
             }
         return (
             <div className = 'center row wrap'>
-                {filteredPokemonData.map(pokemon => {
-                    return <PokeItem pokemon = {pokemon}/>
+                {filteredPokemonData.map((pokemon, i) => {
+                    return <PokeItem key = {i} pokemon = {pokemon}/>
                 })}  
             </div>
         )
