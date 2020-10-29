@@ -26,23 +26,35 @@ img{
     text-align: center;
   }
 
-  ul, li{
+ul, li{
     align-items: left;
     align-content: left;
     justify-content: left;
     justify-items: left;
     text-align: left;
-  }
+}
 
-  .border{
-      border: 1px solid black;
-  }
+.border{
+    border: 1px solid black;
+}
 
-  .capital{
-      text-transform: capitalize;
+.capital{
+    text-transform: capitalize;
 
-  }
+}
 
-  .hidden{
-      visibility: hidden;
-  }
+.hidden{
+    visibility: hidden;
+}
+
+.wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#search-bar{
+    min-width: 200px;
+    max-width: 200px;
+    height: 100px;
+    margin-top: 50px;
+}
