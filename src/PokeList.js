@@ -4,11 +4,14 @@ import PokeItem from './PokeItem.js';
 export default class PokeList extends Component {
     
     render() {
-        const filteredPokemonData = this.props.pokemonData.filter((pokemon) => {
-            if(this.props.filter === '') return true;
-            if (this.props.filter.toUpperCase() === pokemon.pokemon.toUpperCase()) return true;
-            return false
-            });
+        // const filteredPokemonData = this.props.pokemonData.filter((pokemon) => {
+        //     if(this.props.filter === '') return true;
+        //     if (this.props.filter.toUpperCase() === pokemon.pokemon.toUpperCase()) return true;
+        //     return false
+        //     });
+        
+        const filteredPokemonData = this.props.pokemonData;
+        console.log(filteredPokemonData);
         const property = this.props.sort2;
             if(this.props.sort1 === 'ascending'){
                 filteredPokemonData.sort(function(a, b) {
