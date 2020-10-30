@@ -14,7 +14,7 @@ export default class App extends Component {
   }
 
   fetchPokemon = async () => {
-    const response = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.filter}`);
+    const response = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.filter}&perPage=1000`);
     this.setState({ pokemonData: response.body.results });
   }
 
