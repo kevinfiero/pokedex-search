@@ -4,12 +4,6 @@ import PokeItem from './PokeItem.js';
 export default class PokeList extends Component {
     
     render() {
-        // const filteredPokemonData = this.props.pokemonData.filter((pokemon) => {
-        //     if(this.props.filter === '') return true;
-        //     if (this.props.filter.toUpperCase() === pokemon.pokemon.toUpperCase()) return true;
-        //     return false
-        //     });
-        
         const filteredPokemonData = this.props.pokemonData;
         console.log(filteredPokemonData);
         const property = this.props.sort2;
@@ -32,11 +26,25 @@ export default class PokeList extends Component {
                 })
             }
         return (
-            <div className = 'center row wrap'>
-                {filteredPokemonData.map((pokemon, i) => {
-                    return <PokeItem key = {i} pokemon = {pokemon}/>
-                })}  
+            <div>
+            {
+                (filteredPokemonData.length === 0) 
+                    ? <iframe
+                        src='https://media3.giphy.com/media/3oKIPoaRNoYOkBOZKE/giphy.gif?cid=ecf05e47w3xrxgk56hpl1vvqrpdngvxoblptfa692dxyr3y5&rid=giphy.gif'
+                        title = 'waiting'
+                        width = '500px'
+                        height = '500px'
+                        frameBorder = '0'
+                        allowFullScreen/>
+                    :
+                    <div className = 'center row wrap'>
+                        {filteredPokemonData.map((pokemon, i) => {
+                            return <PokeItem key = {i} pokemon = {pokemon}/>
+                        })}  
+                    </div>
+            }
             </div>
+
         )
     }
 }

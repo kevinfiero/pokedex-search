@@ -13,22 +13,22 @@ export default class App extends Component {
     pokemonData: []
   }
 
-  componentDidMount = async () => {
+  fetchPokemon = async () => {
     const response = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.filter}`);
     this.setState({ pokemonData: response.body.results });
-}
+  }
 
-  buttonClick = () => {
-      this.setState({
-          filter: this.state.textString
-          
-      })
-      this.componentDidMount();
+  componentDidMount = async () => {
+    this.fetchPokemon();
+  }
+
+  buttonClick = async () => {
+      this.fetchPokemon();
     }
 
   textChange = (e) => {
     this.setState({
-        textString: e.target.value
+        filter: e.target.value
     })}
 
   sort1Change = (e) => {
