@@ -7,7 +7,6 @@ import fetch from 'superagent';
 export default class App extends Component {
   state = {
     filter: '',
-    textString: '',
     sort1: 'ascending',
     sort2: 'pokemon',
     pokemonData: []
@@ -28,8 +27,11 @@ export default class App extends Component {
 
   textChange = (e) => {
     this.setState({
+      
         filter: e.target.value
-    })}
+    })
+    console.log(this.state.filter);
+  }
 
   sort1Change = (e) => {
     this.setState({
