@@ -8,6 +8,7 @@ import {
 import Header from './Header.js';
 import ListPage from './ListPage.js';
 import Home from './Home.js';
+import DetailPage from './DetailPage.js';
 
 export default class App extends Component {
     render() {
@@ -25,6 +26,11 @@ export default class App extends Component {
                         path="/" 
                         exact
                         render={(routerProps) => <Home {...routerProps} />} 
+                    />
+                    <Route 
+                        path="/pokemon/:pokemonName" 
+                        exact
+                        render={(routerProps) => <DetailPage {...routerProps} />} 
                     />
                     </Switch>
                 </Router>

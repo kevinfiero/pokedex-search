@@ -5,7 +5,6 @@ export default class PokeList extends Component {
     
     render() {
         const filteredPokemonData = this.props.pokemonData;
-        console.log(filteredPokemonData);
         const property = this.props.sort2;
             if(this.props.sort1 === 'ascending'){
                 filteredPokemonData.sort(function(a, b) {
