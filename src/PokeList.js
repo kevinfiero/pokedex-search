@@ -29,7 +29,7 @@ export default class PokeList extends Component {
             {
                 (filteredPokemonData.length === 0) 
                     ? <iframe
-                        src='https://media3.giphy.com/media/3oKIPoaRNoYOkBOZKE/giphy.gif?cid=ecf05e47w3xrxgk56hpl1vvqrpdngvxoblptfa692dxyr3y5&rid=giphy.gif'
+                        src='https://i.giphy.com/media/3oKIPoaRNoYOkBOZKE/giphy.webp'
                         title = 'waiting'
                         width = '500px'
                         height = '500px'
