@@ -10,12 +10,16 @@ export default class App extends Component {
     filter: '',
     sort1: 'ascending',
     sort2: 'pokemon',
-    pokemonData: []
+    pokemonData: [],
+    pageNumber: 1
   }
 
   fetchPokemon = async () => {
-    const response = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.filter}&perPage=1000`);
-    this.setState({ pokemonData: response.body.results });
+    const response = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?page=${this.state.pageNumber}&pokemon=${this.state.filter}&perPage=20`);
+    this.setState({ 
+      pokemonData: response.body.results,
+      count: response.body.count
+    });
   }
 
   componentDidMount = async () => {
@@ -39,14 +43,33 @@ export default class App extends Component {
         sort1: e.target.value
     })}
 
-    sort2Change = (e) => {
-      this.setState({
-          sort2: e.target.value
-      })}
+  sort2Change = (e) => {
+    this.setState({
+        sort2: e.target.value
+    })}
+
+  handleIncrement = async () => {
+    await this.setState({
+      pageNumber: this.state.pageNumber + 1
+    })
+    await this.fetchPokemon();
+  }
+  handleDecrement = async () => {
+    await this.setState({
+      pageNumber: this.state.pageNumber - 1
+    })
+    await this.fetchPokemon();
+  }
 
   render() {
+    console.log(this.state.pageNumber)
     return (
       <>
+        <div className = 'center row'>
+        <button className = 'center navButton' onClick={this.handleDecrement} disabled={this.state.pageNumber === 1}>Previous</button>
+        <div>{this.state.pageNumber}</div>
+        <button className = 'center navButton' onClick={this.handleIncrement} disabled ={this.state.pageNumber === Math.ceil(this.state.count / 20)}>Next</button>
+        </div>
         <div className = 'row background-tan'>
         <div id= 'search-bar' className = 'border center column even'>
           <Searchbar buttonClick = {this.buttonClick} textChange = {this.textChange} />
