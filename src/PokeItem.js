@@ -8,7 +8,7 @@ export default class PokeItem extends Component {
             if(str === 'NA'){return 'hidden'}
         }
         return (
-            <Link to={`/pokemon/${this.props.pokemon.pokemon}`}>
+            <Link className = 'link' to={`/pokemon/${this.props.pokemon.pokemon}`}>
             <section className = 'column center border capital' style={{backgroundColor: this.props.pokemon.color_1}}>
                 <h2>{this.props.pokemon.pokemon}</h2>
                 <img src = {this.props.pokemon.url_image} alt = {this.props.pokemon.pokemon} />
