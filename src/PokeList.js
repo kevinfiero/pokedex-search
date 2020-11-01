@@ -4,12 +4,10 @@ import PokeItem from './PokeItem.js';
 export default class PokeList extends Component {
     
     render() {
-        const filteredPokemonData = this.props.pokemonData;
-
         return (
             <div>
             {
-                (filteredPokemonData.length === 0) 
+                (this.props.pokemonData.length === 0) 
                     ? <iframe
                         src='https://i.giphy.com/media/3oKIPoaRNoYOkBOZKE/giphy.webp'
                         title = 'waiting'
@@ -19,7 +17,7 @@ export default class PokeList extends Component {
                         allowFullScreen/>
                     :
                     <div className = 'center row wrap'>
-                        {filteredPokemonData.map((pokemon, i) => {
+                        {this.props.pokemonData.map((pokemon, i) => {
                             return <PokeItem key = {i} pokemon = {pokemon}/>
                         })}  
                     </div>
