@@ -16,7 +16,14 @@ export default class App extends Component {
 
   fetchPokemon = async () => {
     const response = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.filter}&sort=${this.state.sort2}&direction=${this.state.sort1}&page=${this.state.pageNumber}&perPage=20`);
-    console.log(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.filter}&sort=${this.state.sort1}&direction=${this.state.sort2}&page=${this.state.pageNumber}&perPage=20`);
+    await this.setState({ 
+      pokemonData: response.body.results,
+      count: response.body.count
+    });
+  }
+
+  fetchPokemonByID = async () => {
+    const response = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex/${this.state.id}`);
     await this.setState({ 
       pokemonData: response.body.results,
       count: response.body.count
