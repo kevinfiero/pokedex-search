@@ -31,7 +31,6 @@ export default class PokeItem extends Component {
                 </div>
             </section>
             </Link>
-
         )
     }
 }
