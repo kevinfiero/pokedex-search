@@ -23,8 +23,8 @@ export default class DetailPage extends Component {
   render() {
     return (
       <>
-        <h1>{this.props.match.params.pokemonName}!</h1>
-        <div className = 'row background-tan'>
+        <h1 className = 'capital center'>{this.props.match.params.pokemonName}!</h1>
+        <div className = 'row background-tan center'>
           <PokeList pokemonData = {this.state.pokemonData} filter = {this.state.filter} />
         </div>
       </>
