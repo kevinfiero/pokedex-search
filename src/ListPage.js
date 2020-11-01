@@ -15,8 +15,9 @@ export default class App extends Component {
   }
 
   fetchPokemon = async () => {
-    const response = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?page=${this.state.pageNumber}&pokemon=${this.state.filter}&perPage=20`);
-    this.setState({ 
+    const response = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.filter}&sort=${this.state.sort2}&direction=${this.state.sort1}&page=${this.state.pageNumber}&perPage=20`);
+    console.log(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.filter}&sort=${this.state.sort1}&direction=${this.state.sort2}&page=${this.state.pageNumber}&perPage=20`);
+    await this.setState({ 
       pokemonData: response.body.results,
       count: response.body.count
     });
@@ -32,21 +33,25 @@ export default class App extends Component {
 
   textChange = (e) => {
     this.setState({
-      
         filter: e.target.value
     })
-    console.log(this.state.filter);
   }
 
-  sort1Change = (e) => {
-    this.setState({
+  sort1Change = async (e) => {
+ 
+    await this.setState({
         sort1: e.target.value
-    })}
+    })
+    await this.fetchPokemon();
+  }
 
-  sort2Change = (e) => {
-    this.setState({
+  sort2Change = async (e) => {
+ 
+    await this.setState({
         sort2: e.target.value
-    })}
+    })
+    await this.fetchPokemon();
+  }
 
   handleIncrement = async () => {
     await this.setState({
@@ -62,7 +67,6 @@ export default class App extends Component {
   }
 
   render() {
-    console.log(this.state.pageNumber)
     return (
       <>
         <div className = 'center row'>
