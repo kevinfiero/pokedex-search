@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import PokeList from './PokeList.js';
 import PokeItem from './PokeItem.js';
-import Searchbar from './Searchbar.js';
-import Sort from './Sort.js';
+import MoreDetails from './MoreDetails.js';
 import fetch from 'superagent';
 import { Link } from 'react-router-dom';
 
@@ -26,11 +24,22 @@ export default class DetailPage extends Component {
 
   render() {
     return (
-      <>
+      <>{
+        (this.state.pokemonData === undefined) 
+            ? <iframe
+                src='https://i.giphy.com/media/3oKIPoaRNoYOkBOZKE/giphy.webp'
+                title = 'waiting'
+                width = '500px'
+                height = '500px'
+                frameBorder = '0'
+                allowFullScreen/>
+            :
         <div className = 'column background-tan center'>
-          <Link to="/list" className = 'navButton'><button>Return</button></Link>
+          <Link className = 'nav-button' to="/list" ><button>Return</button></Link>
           <PokeItem pokemon = {this.state.pokemonData}/>
+          <MoreDetails pokemon = {this.state.pokemonData}/>
         </div>
+        }
       </>
     )
   }

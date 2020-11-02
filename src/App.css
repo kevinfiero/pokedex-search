@@ -6,8 +6,9 @@ html{
 
 section{
     width: 300px;
-    height: 400px;
+    height: 350px;
     margin: 10px;
+    justify-content: top;
 }
 
 header{
@@ -16,6 +17,29 @@ header{
 
 iframe{
     margin: 50px 0px 0px 300px;
+}
+td, th{
+    width: 100px;
+    height: 10px;
+    border: 1px black solid;
+}
+
+table{
+    border: 1px black solid;
+    border-collapse: collapse;
+}
+
+img{
+    height: 100px;
+    width: 100px;
+}
+
+ul, li{
+    align-items: left;
+    align-content: left;
+    justify-content: left;
+    justify-items: left;
+    text-align: left;
 }
 
 .column{
@@ -35,11 +59,6 @@ iframe{
     width: 20%
 }
 
-img{
-    height: 100px;
-    width: 100px;
-}
-
 .center{
     align-items: center;
     align-content: center;
@@ -48,25 +67,20 @@ img{
     text-align: center;
   }
 
-ul, li{
-    align-items: left;
-    align-content: left;
-    justify-content: left;
-    justify-items: left;
-    text-align: left;
-}
-
 .border{
     border: 1px solid black;
 }
 
 .capital{
     text-transform: capitalize;
-
 }
 
 .hidden{
     visibility: hidden;
+}
+
+.none{
+    display: none;
 }
 
 .wrap{
@@ -78,7 +92,7 @@ ul, li{
     justify-content: space-evenly;
 }
 
-.navButton{
+.nav-button{
     margin: 10px;
     font-size: 20px;
 }
@@ -102,4 +116,10 @@ ul, li{
 
 #box{
     padding: 3px;
+}
+
+#more-details{
+    width: 600px;
+    height: 125px;
+    margin: 5px;
 }
