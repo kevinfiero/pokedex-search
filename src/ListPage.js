@@ -77,9 +77,9 @@ export default class App extends Component {
     return (
       <>
         <div className = 'center row'>
-        <button className = 'center navButton' onClick={this.handleDecrement} disabled={this.state.pageNumber === 1}>Previous</button>
+        <button className = 'center nav-button' onClick={this.handleDecrement} disabled={this.state.pageNumber === 1}>Previous</button>
         <div>{this.state.pageNumber}</div>
-        <button className = 'center navButton' onClick={this.handleIncrement} disabled ={this.state.pageNumber === Math.ceil(this.state.count / 20)}>Next</button>
+        <button className = 'center nav-button' onClick={this.handleIncrement} disabled ={this.state.pageNumber === Math.ceil(this.state.count / 20)}>Next</button>
         </div>
         <div className = 'row background-tan'>
         <div id= 'search-bar' className = 'border center column even'>
