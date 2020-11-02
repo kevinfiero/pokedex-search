@@ -22,14 +22,6 @@ export default class App extends Component {
     });
   }
 
-  fetchPokemonByID = async () => {
-    const response = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex/${this.state.id}`);
-    await this.setState({ 
-      pokemonData: response.body.results,
-      count: response.body.count
-    });
-  }
-
   componentDidMount = async () => {
     this.fetchPokemon();
   }
